@@ -21,6 +21,7 @@
 </head>
 <body class="body">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
       *{
           margin: auto;
           padding: 0;
@@ -35,35 +36,59 @@
         width: 80px;
         height: 100px;
       }
+      .system {
+        text-align: center;
+        font-family: "Preahvihear", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .system1 {
+        margin-top: 10px;
+        font-family: "Preahvihear", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+     .menu{
+        width: 1000px;
+        height: 500px;
+        padding: 20px;
+        margin: auto;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 2px;
+        margin-top: 20px;
+    }
   </style>
-<table class="table">
-      <h1>Productlist</h1>
-      <a href="add.php"><button type="button" class="btn btn-primary">Add Product</button></a>
-  <thead>
-      <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Price</th>
-          <th scope="col">Note</th>
-          <th scope="col">Image</tr>
-  </thead>
-  <tbody>
-      <?php foreach($productList as $key => $pro){?>
-      <tr>
-          <th scope="row"><?php echo $key + 1?></th>
-          <td><?php echo $pro['name']?></td>
-          <td><?php echo $pro['price']>20? "Hight Price": "Low Price"?></td>
-          <td><?php echo $pro['note']?></td>
-          <td><img class="img" src="<?php  echo $pro['image'] ?? ""  ?>"></td>
-          <td>
-          <a href="delete.php?id=<?php echo $pro['product_id']?>"class="btn btn-info" type="submit"><i class="bi bi-trash"></i></a>
-         
-          <a href="edit.php?id=<?php echo $pro['product_id']?>" class="btn btn-info" type="submit">Edit</a>
-          </td>
-      </tr>
-      <?php } ?>
+  <h1 class="system">ប្រព័ន្ធគ្រប់គ្រងទំនិញ</h1>
+  <div class="menu">
+          <table class="table">
+          <h1 class="system1">ប្រភេទទំនិញ</h1>
+                <a href="add.php"><button type="button" class="btn btn-primary">Add Product</button></a>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Note</th>
+                    <th scope="col">Image</tr>
+            </thead>
+            <tbody>
+                <?php foreach($productList as $key => $pro){?>
+                <tr>
+                    <th scope="row"><?php echo $key + 1?></th>
+                    <td><?php echo $pro['name']?></td>
+                    <td><?php echo $pro['price']>20? "Hight Price": "Low Price"?></td>
+                    <td><?php echo $pro['note']?></td>
+                    <td><img class="img" src="<?php  echo $pro['image'] ?? ""  ?>"></td>
+                    <td>
+                    <a href="delete.php?id=<?php echo $pro['product_id']?>"class="btn btn-info" type="submit"><i class="bi bi-trash"></i></a>
+                  
+                    <a href="edit.php?id=<?php echo $pro['product_id']?>" class="btn btn-info" type="submit">Edit</a>
+                    </td>
+                </tr>
+                <?php } ?>
 
-  </tbody>
-</table>
+            </tbody>
+          </table>
+</div>
 </body>
 </html>

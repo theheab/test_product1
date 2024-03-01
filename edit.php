@@ -77,30 +77,44 @@
    <title>Document</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+<style>
+   .container {
+      background-color: aliceblue;
+      width: 600px;
+      height: 400px;
+      margin: auto;
+      margin-top: 30px;
+      padding: 30px;
+      box-shadow: 0 0 0 2px;
+   }
+   .btn-success {
+      margin-right: 50px;
+   }
+</style>
 <body>
    <div class="container">
       <h1>Edit Product</h1>
       <form action="" method="post" enctype="multipart/form-data">
          <div class="mb-3 row">
-            <label for="proName" class="form-label col-md-3">Product Name </label>
+            <label for="proName" class="form-label col-md-2">Product Name </label>
             <div class="col-md-9">
                <input type="text" id="proName" class="form-control" name="name" value="<?php  echo $pro['name']?>" />
             </div>
          </div>
          <div class="mb-3 row">
-            <label for="proPrice" class="form-label col-md-3">Price </label>
+            <label for="proPrice" class="form-label col-md-2">Price </label>
             <div class="col-md-9">
                <input type="number" id="proPrice" class="form-control" name="price" value="<?php  echo $pro['price']?>" />
             </div>
          </div>
          <div class="mb-3 row">
-            <label for="proNote" class="form-label col-md-3">Note </label>
+            <label for="proNote" class="form-label col-md-2">Note </label>
             <div class="col-md-9">
                <textarea type="text" id="proNote" class="form-control" name="note"><?php  echo $pro['note']?></textarea>
             </div>
          </div>
          <div class="mb-3 row">
-                        <label for="inputPassword" class="col-sm-1 col-form-label">Image</label>
+                        <label for="inputPassword" class="col-md-2 col-form-label">Image</label>
                         <div class="col-sm-9">
                         <input type="file" class="form-control" id="image" name="image">
                         <input type="hidden" class="form-control" id="oldimage" name="oldimage" value="<?php  echo $pro['image']?>" >
